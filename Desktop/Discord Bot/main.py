@@ -1,4 +1,9 @@
 import bot
+import client
 
 if __name__ == '__main__':
-    bot.run_discord_bot()
+    TOKEN = 'MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw'  # Replace with your bot token
+    
+    # Assuming bot and client are instances of commands.Bot and discord.Client respectively
+    bot.bot.run(TOKEN)
+    client.client.run(TOKEN)
