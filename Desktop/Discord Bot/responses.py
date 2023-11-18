@@ -1,8 +1,11 @@
 import random
 
 def get_response(user_message: str) -> str:
+    print("get_response function is called!") #Test Cases
     p_message = user_message.lower()
     print(f"Checking message: {p_message}")
+    print(f"Input user_message: {user_message}")#Test Cases
+    print(f"Lowercased p_message: {p_message}")#Test Cases
 
     if p_message == 'hello':
         return 'Hello there'
