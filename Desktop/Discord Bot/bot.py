@@ -3,8 +3,6 @@ from io import BytesIO
 import requests
 from discord.ext import commands
 import responses
-import random
-
 
 
 intents = discord.Intents.all()
@@ -14,8 +12,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 client = discord.Client(intents=intents)
 
-#Send message
-
+# Send message
 async def send_message(message, user_message, is_private, image_url=None):
     try:
         if image_url:
@@ -41,30 +38,9 @@ async def send_message(message, user_message, is_private, image_url=None):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-def get_response(user_message: str) -> str:
-    p_message = user_message.lower()
-    print(f"Checking message: {p_message}")
-
-    if p_message == 'hello':
-        return 'Hello there'
-
-    if p_message == 'roll':
-        return str(random.randint(1, 6))
-
-    if p_message == 'i love you':
-        return 'I love you too Crundee'
-
-    if p_message == 'whats':
-        return 'moaning'
-
-    if p_message == '!help':
-        return " !dotroy "
 
 
-    if p_message.startswith('!'):
-        return 'This is a special command'
 
-    return "I don't know what you said"
 
     
 # Waifu
@@ -122,3 +98,8 @@ async def feftywacky(ctx):
     image_url = "https://media.discordapp.net/attachments/1062926223111635002/1151375310206545952/IMG_5471.png?ex=6541d551&is=652f6051&hm=04e4b600b23c0b047a4c8045067e17185fa735ae2f565c410e8f03137ea42c8e&=&width=280&height=606"
     user_message =ctx.message.content
     await send_message(ctx.message,user_message,is_private=False,image_url=image_url)
+
+
+    
+
+bot.run('MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw')

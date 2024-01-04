@@ -1,12 +1,16 @@
 import random
 
 def get_response(user_message: str) -> str:
-    print("get_response function is called!") #Test Cases
+    print("get_response function is called!")  # Debug statement
     p_message = user_message.lower()
-    print(f"Checking message: {p_message}")
-    print(f"Input user_message: {user_message}")#Test Cases
-    print(f"Lowercased p_message: {p_message}")#Test Cases
+    print(f"Checking message: {p_message}")  # Debug statement
+    print(f"Input user_message: {user_message}")  # Debug statement
+    print(f"Lowercased p_message: {p_message}")  # Debug statement
 
+
+    if 'hello' in p_message:
+        return 'Hello there'
+    
     if p_message == 'hello':
         return 'Hello there'
 
@@ -17,11 +21,10 @@ def get_response(user_message: str) -> str:
         return 'I love you too Crundee'
 
     if p_message == 'whats':
-        return 'moaning'
+        return 'up'
 
     if p_message == '!help':
         return " !dotroy "
-
 
     if p_message.startswith('!'):
         return 'This is a special command'
