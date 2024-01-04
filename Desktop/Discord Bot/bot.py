@@ -3,6 +3,7 @@ from io import BytesIO
 import requests
 from discord.ext import commands
 import responses
+import random
 
 
 intents = discord.Intents.all()
@@ -14,6 +15,14 @@ client = discord.Client(intents=intents)
 
 # Send message
 async def send_message(message, user_message, is_private, image_url=None):
+    try:
+        response = responses.handle_response(user_message)
+        if is_private:
+            await message.author.send(responses)
+        else:
+            await message.channel.send(responses)
+    except Exception as e:
+        print(e)
     try:
         if image_url:
             response = responses.get_response(user_message)
@@ -37,8 +46,6 @@ async def send_message(message, user_message, is_private, image_url=None):
                 print("Empty response from 'get_response'")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-
-
 
 
 
@@ -90,7 +97,7 @@ async def on_ready():
 @bot.command()
 async def dotroy(ctx):
     image_url = "https://cdn.discordapp.com/attachments/1064305767215288321/1162234112543838299/IMG_0218.png?ex=653b31dd&is=6528bcdd&hm=b96fde269321d2cb7d3a1788d2d3eb8558d0a6c39da280e39841899df1f05161&"
-    user_message = ctx.message.content  # Get the message content
+    user_message = ctx.message.content  
     await send_message(ctx.message, user_message, is_private=False, image_url=image_url)
 
 @bot.command()
@@ -102,4 +109,4 @@ async def feftywacky(ctx):
 
     
 
-bot.run('MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw')
+#bot.run('MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw')

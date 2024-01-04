@@ -1,3 +1,4 @@
+import random
 import discord
 from discord.ext import commands
 
@@ -17,12 +18,24 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    if message.content == 'hello':
+        await message.channel.send('Sup')
+    
+    if message.content == 'roll':
+        await message.channel.send(str(random.randint(1, 6)))
+
+    if message.content == 'how are you doing today':
+        await message.channel.send('Better now that you are here')
 
     username = str(message.author)
     user_message = str(message.content)
     channel = str(message.channel)
 
     print (f'{username} said:"{user_message}"({channel})' )
+
+
+
+    
 
 
 
