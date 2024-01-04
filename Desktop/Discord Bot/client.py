@@ -10,7 +10,7 @@ client = commands.Bot(command_prefix='!', intents=intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game('Pleasing Her Master'))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game('In Avalon'))
     print(f'{client.user} asks if you are her master!')
 
 @client.event
@@ -24,4 +24,6 @@ async def on_message(message):
 
     print (f'{username} said:"{user_message}"({channel})' )
 
-client.run('MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw')
+
+
+#client.run('MTE1MjI1NTI2MzQyOTExMTg4OQ.G4tUZx.gmZERnvvuvTpYJMzPfRZ0ydboR7LuxKik2FDAw') 
